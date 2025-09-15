@@ -70,7 +70,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 115vh;
+  min-height: 110vh;
   background: url("background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
@@ -270,3 +270,4 @@ body {
   cursor: pointer;
   z-index: 1;
 }
+
