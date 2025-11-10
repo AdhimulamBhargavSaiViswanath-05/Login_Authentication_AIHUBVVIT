@@ -63,7 +63,7 @@ router.post('/signup', async (req, res) => {
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
             .header {
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
               color: white;
               padding: 30px 20px;
               text-align: center;
@@ -89,26 +89,26 @@ router.post('/signup', async (req, res) => {
             .verify-button {
               display: inline-block;
               padding: 15px 40px;
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
               color: white !important;
               text-decoration: none;
               border-radius: 50px;
               font-weight: bold;
               font-size: 16px;
               margin: 20px 0;
-              box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+              box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
               transition: all 0.3s ease;
             }
             .verify-button:hover {
               transform: translateY(-2px);
-              box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+              box-shadow: 0 6px 20px rgba(252, 129, 129, 0.6);
             }
             .quote-section {
-              background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+              background: linear-gradient(135deg, #fff5f5 0%, #fef5e7 100%);
               padding: 20px;
               border-radius: 8px;
               margin: 30px 0;
-              border-left: 4px solid #667eea;
+              border-left: 4px solid #fc8181;
             }
             .quote-section p {
               margin: 0;
@@ -119,7 +119,7 @@ router.post('/signup', async (req, res) => {
             .quote-section .quote-author {
               margin-top: 10px;
               font-weight: bold;
-              color: #5b21b6;
+              color: #c5aa7b;
               font-style: normal;
             }
             .info-section {
@@ -149,7 +149,7 @@ router.post('/signup', async (req, res) => {
               font-size: 18px;
             }
             .college-details a {
-              color: #5b21b6;
+              color: #c5aa7b;
               text-decoration: none;
               font-size: 14px;
             }
@@ -159,7 +159,7 @@ router.post('/signup', async (req, res) => {
             .contact-section {
               margin-top: 30px;
               padding: 20px;
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
               border-radius: 8px;
               color: white;
             }
@@ -256,7 +256,7 @@ router.post('/signup', async (req, res) => {
 
               <!-- About AIHUB -->
               <div class="info-section">
-                <h3 style="color: #5b21b6; margin-top: 0;">🤖 About AIHUB-VVIT</h3>
+                <h3 style="color: #c5aa7b; margin-top: 0;">🤖 About AIHUB-VVIT</h3>
                 <p>We are the student community of VVIT dedicated to leveraging AI to solve real-world problems, learn cutting-edge technologies, and build innovative projects together.</p>
                 <p><strong>What we do:</strong></p>
                 <ul style="color: #555;">
@@ -468,7 +468,7 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
               }
               .header {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                 color: white;
                 padding: 40px 20px;
                 text-align: center;
@@ -487,15 +487,15 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
                 padding: 40px 30px;
               }
               .welcome-box {
-                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                background: linear-gradient(135deg, #fff5f5 0%, #fef5e7 100%);
                 padding: 25px;
                 border-radius: 10px;
                 margin: 20px 0;
-                border-left: 5px solid #667eea;
+                border-left: 5px solid #fc8181;
               }
               .welcome-box h2 {
                 margin: 0 0 15px 0;
-                color: #5b21b6;
+                color: #c5aa7b;
                 font-size: 24px;
               }
               .user-info {
@@ -509,19 +509,19 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
                 font-size: 16px;
               }
               .user-info strong {
-                color: #5b21b6;
+                color: #c5aa7b;
                 font-weight: 600;
               }
               .next-steps {
-                background-color: #e8f4f8;
+                background-color: #fff5f5;
                 padding: 20px;
                 border-radius: 8px;
                 margin: 25px 0;
-                border-left: 4px solid #2196F3;
+                border-left: 4px solid #fc8181;
               }
               .next-steps h3 {
                 margin: 0 0 15px 0;
-                color: #2196F3;
+                color: #fc8181;
               }
               .next-steps ul {
                 margin: 0;
@@ -534,23 +534,23 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
               .cta-button {
                 display: inline-block;
                 padding: 15px 40px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                 color: white !important;
                 text-decoration: none;
                 border-radius: 50px;
                 font-weight: bold;
                 font-size: 16px;
                 margin: 20px 0;
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
                 text-align: center;
               }
               .quote-section {
-                background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+                background: linear-gradient(135deg, #fff5f5 0%, #fef5e7 100%);
                 padding: 20px;
                 border-radius: 8px;
                 margin: 30px 0;
                 text-align: center;
-                border: 2px solid #f39c12;
+                border: 2px solid #fc8181;
               }
               .quote-section p {
                 margin: 0;
@@ -562,7 +562,7 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
               .contact-section {
                 margin-top: 30px;
                 padding: 20px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                 border-radius: 8px;
                 color: white;
               }
@@ -731,7 +731,7 @@ router.get('/microsoft/callback', passport.authenticate('microsoft', { failureRe
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
               }
               .header {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                 color: white;
                 padding: 40px 20px;
                 text-align: center;
@@ -750,15 +750,15 @@ router.get('/microsoft/callback', passport.authenticate('microsoft', { failureRe
                 padding: 40px 30px;
               }
               .welcome-box {
-                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                background: linear-gradient(135deg, #fff5f5 0%, #fef5e7 100%);
                 padding: 25px;
                 border-radius: 10px;
                 margin: 20px 0;
-                border-left: 5px solid #667eea;
+                border-left: 5px solid #fc8181;
               }
               .welcome-box h2 {
                 margin: 0 0 15px 0;
-                color: #5b21b6;
+                color: #c5aa7b;
                 font-size: 24px;
               }
               .user-info {
@@ -772,19 +772,19 @@ router.get('/microsoft/callback', passport.authenticate('microsoft', { failureRe
                 font-size: 16px;
               }
               .user-info strong {
-                color: #5b21b6;
+                color: #c5aa7b;
                 font-weight: 600;
               }
               .next-steps {
-                background-color: #e8f4f8;
+                background-color: #fff5f5;
                 padding: 20px;
                 border-radius: 8px;
                 margin: 25px 0;
-                border-left: 4px solid #2196F3;
+                border-left: 4px solid #fc8181;
               }
               .next-steps h3 {
                 margin: 0 0 15px 0;
-                color: #2196F3;
+                color: #fc8181;
               }
               .next-steps ul {
                 margin: 0;
@@ -797,23 +797,23 @@ router.get('/microsoft/callback', passport.authenticate('microsoft', { failureRe
               .cta-button {
                 display: inline-block;
                 padding: 15px 40px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                 color: white !important;
                 text-decoration: none;
                 border-radius: 50px;
                 font-weight: bold;
                 font-size: 16px;
                 margin: 20px 0;
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
                 text-align: center;
               }
               .quote-section {
-                background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+                background: linear-gradient(135deg, #fff5f5 0%, #fef5e7 100%);
                 padding: 20px;
                 border-radius: 8px;
                 margin: 30px 0;
                 text-align: center;
-                border: 2px solid #f39c12;
+                border: 2px solid #fc8181;
               }
               .quote-section p {
                 margin: 0;
@@ -825,7 +825,7 @@ router.get('/microsoft/callback', passport.authenticate('microsoft', { failureRe
               .contact-section {
                 margin-top: 30px;
                 padding: 20px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                 border-radius: 8px;
                 color: white;
               }
@@ -1027,7 +1027,7 @@ router.post('/forgot-password', async (req, res) => {
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
             .header {
-              background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+              background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
               color: white;
               padding: 30px 20px;
               text-align: center;
@@ -1043,14 +1043,14 @@ router.post('/forgot-password', async (req, res) => {
             .reset-button {
               display: inline-block;
               padding: 15px 40px;
-              background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+              background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
               color: white !important;
               text-decoration: none;
               border-radius: 50px;
               font-weight: bold;
               font-size: 16px;
               margin: 20px 0;
-              box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+              box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
             }
             .warning {
               background-color: #fff3cd;
@@ -1061,12 +1061,12 @@ router.post('/forgot-password', async (req, res) => {
               color: #856404;
             }
             .security-notice {
-              background-color: #e7f3ff;
-              border-left: 4px solid #2196F3;
+              background-color: #fff5f5;
+              border-left: 4px solid #fc8181;
               padding: 15px;
               margin: 20px 0;
               border-radius: 4px;
-              color: #0d47a1;
+              color: #c5aa7b;
             }
             .footer {
               background-color: #2c3e50;
@@ -1077,10 +1077,10 @@ router.post('/forgot-password', async (req, res) => {
             }
             .expiry-notice {
               font-size: 14px;
-              color: #d32f2f;
+              color: #fc8181;
               margin-top: 20px;
               padding: 10px;
-              background-color: #ffebee;
+              background-color: #fff5f5;
               border-radius: 5px;
               text-align: center;
               font-weight: bold;
@@ -1206,7 +1206,7 @@ router.post('/reset-password/:token', async (req, res) => {
                 overflow: hidden;
               }
               .header { 
-                background: linear-gradient(135deg, #FF6347 0%, #667eea 100%); 
+                background: linear-gradient(135deg, #FF6347 0%, #fc8181 100%); 
                 color: white; 
                 padding: 30px 20px; 
                 text-align: center; 
@@ -1272,17 +1272,17 @@ router.post('/reset-password/:token', async (req, res) => {
               .login-button { 
                 display: inline-block; 
                 padding: 15px 40px; 
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%); 
                 color: white !important; 
                 text-decoration: none; 
                 border-radius: 50px; 
                 font-weight: bold; 
                 margin: 20px 0;
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
               }
               .login-button:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+                box-shadow: 0 6px 20px rgba(252, 129, 129, 0.6);
               }
               .footer { 
                 background: #2c3e50; 
@@ -1332,8 +1332,8 @@ router.post('/reset-password/:token', async (req, res) => {
                 </p>
                 <p style="margin-top: 30px; color: #666; font-size: 14px; text-align: center;">
                   <strong>Need Help?</strong><br>
-                  📧 Email: <a href="mailto:aihub-vvit@vvit.net" style="color: #667eea;">aihub-vvit@vvit.net</a><br>
-                  🌐 Website: <a href="https://aihub-vvitu.social/" target="_blank" style="color: #667eea;">aihub-vvitu.social</a>
+                  📧 Email: <a href="mailto:aihub-vvit@vvit.net" style="color: #fc8181;">aihub-vvit@vvit.net</a><br>
+                  🌐 Website: <a href="https://aihub-vvitu.social/" target="_blank" style="color: #fc8181;">aihub-vvitu.social</a>
                 </p>
               </div>
               <div class="footer">
@@ -1413,7 +1413,7 @@ router.get('/verify-email/:token', async (req, res) => {
                       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                     }
                     .header {
-                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                       color: white;
                       padding: 30px 20px;
                       text-align: center;
@@ -1427,14 +1427,14 @@ router.get('/verify-email/:token', async (req, res) => {
                       padding: 40px 30px;
                     }
                     .welcome-box {
-                      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                      background: linear-gradient(135deg, #fff5f5 0%, #fef5e7 100%);
                       padding: 25px;
                       border-radius: 10px;
                       margin: 20px 0;
                       text-align: center;
                     }
                     .welcome-box h2 {
-                      color: #5b21b6;
+                      color: #c5aa7b;
                       margin: 0 0 10px 0;
                     }
                     .user-details {
@@ -1453,20 +1453,20 @@ router.get('/verify-email/:token', async (req, res) => {
                     }
                     .user-details td:first-child {
                       font-weight: bold;
-                      color: #5b21b6;
+                      color: #c5aa7b;
                       width: 40%;
                     }
                     .cta-button {
                       display: inline-block;
                       padding: 15px 40px;
-                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      background: linear-gradient(135deg, #fc8181 0%, #c5aa7b 100%);
                       color: white !important;
                       text-decoration: none;
                       border-radius: 50px;
                       font-weight: bold;
                       font-size: 16px;
                       margin: 20px 0;
-                      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                      box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
                     }
                     .next-steps {
                       background-color: #f8f9fa;
@@ -1475,7 +1475,7 @@ router.get('/verify-email/:token', async (req, res) => {
                       margin: 20px 0;
                     }
                     .next-steps h3 {
-                      color: #5b21b6;
+                      color: #c5aa7b;
                       margin-top: 0;
                     }
                     .next-steps ul {
@@ -1485,11 +1485,11 @@ router.get('/verify-email/:token', async (req, res) => {
                       margin: 10px 0;
                     }
                     .quote-section {
-                      background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+                      background: linear-gradient(135deg, #fff5f5 0%, #fef5e7 100%);
                       padding: 20px;
                       border-radius: 8px;
                       margin: 30px 0;
-                      border-left: 4px solid #f39c12;
+                      border-left: 4px solid #fc8181;
                     }
                     .quote-section p {
                       margin: 0;
@@ -1500,7 +1500,7 @@ router.get('/verify-email/:token', async (req, res) => {
                     .quote-section .quote-author {
                       margin-top: 10px;
                       font-weight: bold;
-                      color: #d63031;
+                      color: #c5aa7b;
                       font-style: normal;
                     }
                     .contact-section {
@@ -1510,7 +1510,7 @@ router.get('/verify-email/:token', async (req, res) => {
                       margin: 20px 0;
                     }
                     .contact-section h3 {
-                      color: #5b21b6;
+                      color: #c5aa7b;
                       margin-top: 0;
                     }
                     .contact-links {
@@ -1523,15 +1523,15 @@ router.get('/verify-email/:token', async (req, res) => {
                       display: inline-block;
                       padding: 8px 16px;
                       background-color: white;
-                      color: #5b21b6;
+                      color: #c5aa7b;
                       text-decoration: none;
                       border-radius: 20px;
-                      border: 2px solid #667eea;
+                      border: 2px solid #fc8181;
                       font-size: 14px;
                       transition: all 0.3s ease;
                     }
                     .contact-links a:hover {
-                      background-color: #5b21b6;
+                      background-color: #c5aa7b;
                       color: white;
                     }
                     .footer {
@@ -1558,7 +1558,7 @@ router.get('/verify-email/:token', async (req, res) => {
                       <p>Congratulations! Your email has been successfully verified and your AIHub account is now fully activated.</p>
 
                       <div class="user-details">
-                        <h3 style="color: #5b21b6; margin-top: 0;">📋 Your Registration Details</h3>
+                        <h3 style="color: #c5aa7b; margin-top: 0;">📋 Your Registration Details</h3>
                         <table>
                           <tr>
                             <td>Name:</td>
