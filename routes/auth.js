@@ -348,9 +348,39 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login', async (req, res, next) => {
   if (req.body.remember) {
     req.session.cookie.maxAge = 30 * 24 * 60 * 60 * 1000; // 30 days
+  }
+  
+  // BEFORE passport authentication: Check if OAuth user is trying to login with password
+  const { email, password } = req.body;
+  
+  try {
+    const existingUser = await User.findOne({ email: email.toLowerCase() });
+    
+    // Check if user signed up with Google OAuth
+    if (existingUser && existingUser.googleId && !existingUser.password) {
+      console.log(`⚠️ OAuth user attempted password login: ${email} (Google)`);
+      return res.status(400).json({ 
+        message: 'This account was created using Google Sign-In. Please use "Continue with Google" to log in.',
+        isOAuthAccount: true,
+        provider: 'Google'
+      });
+    }
+    
+    // Check if user signed up with Microsoft OAuth
+    if (existingUser && existingUser.microsoftId && !existingUser.password) {
+      console.log(`⚠️ OAuth user attempted password login: ${email} (Microsoft)`);
+      return res.status(400).json({ 
+        message: 'This account was created using Microsoft Sign-In. Please use "Continue with Microsoft" to log in.',
+        isOAuthAccount: true,
+        provider: 'Microsoft'
+      });
+    }
+  } catch (err) {
+    console.error('❌ Error checking OAuth user:', err.message);
+    return res.status(500).json({ message: 'Server error' });
   }
   
   passport.authenticate('local', (err, user, info) => {
@@ -932,6 +962,39 @@ router.post('/forgot-password', async (req, res) => {
       // Don't reveal if user exists or not for security
       return res.json({ message: 'If a user with that email exists, a password reset link has been sent.' });
     }
+
+    // ======= OAUTH USER PROTECTION - PREVENT PASSWORD RESET =======
+    
+    // Check if user signed up with Google OAuth
+    if (user.googleId && !user.password) {
+      console.log(`⚠️ OAuth user attempted password reset: ${email} (Google)`);
+      return res.status(400).json({ 
+        message: 'This account was created using Google Sign-In. Please use "Continue with Google" to log in. Password reset is not available for Google accounts.',
+        isOAuthAccount: true,
+        provider: 'Google'
+      });
+    }
+
+    // Check if user signed up with Microsoft OAuth
+    if (user.microsoftId && !user.password) {
+      console.log(`⚠️ OAuth user attempted password reset: ${email} (Microsoft)`);
+      return res.status(400).json({ 
+        message: 'This account was created using Microsoft Sign-In. Please use "Continue with Microsoft" to log in. Password reset is not available for Microsoft accounts.',
+        isOAuthAccount: true,
+        provider: 'Microsoft'
+      });
+    }
+
+    // Check if user has no password set (general OAuth user - fallback)
+    if (!user.password) {
+      console.log(`⚠️ OAuth user (unknown provider) attempted password reset: ${email}`);
+      return res.status(400).json({ 
+        message: 'This account was created using social login (Google/Microsoft). Please use the appropriate social login button to access your account.',
+        isOAuthAccount: true
+      });
+    }
+    
+    // ======= END OAUTH PROTECTION =======
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
     const url = `http://localhost:5173/reset-password/${token}`;
