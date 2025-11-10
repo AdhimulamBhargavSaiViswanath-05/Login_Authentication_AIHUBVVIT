@@ -1176,7 +1176,186 @@ router.post('/reset-password/:token', async (req, res) => {
     user.password = password;
     await user.save();
 
-    res.json({ message: 'Password has been reset successfully' });
+    console.log(`✅ Password reset successful for user: ${user.email}`);
+
+    // Send password reset confirmation email
+    try {
+      await sendEmail({
+        to: user.email,
+        subject: '✅ Password Successfully Reset - AIHUB-VVIT',
+        text: `Password Reset Confirmation\n\nHello ${user.name},\n\nYour password has been successfully reset on ${new Date().toLocaleString()}.\n\nIf you did not make this change, please contact our support team immediately.\n\nLogin now: http://localhost:5173/login\n\n© ${new Date().getFullYear()} AIHUB-VVIT`,
+        html: `
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+              body { 
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                background-color: #f4f7fa; 
+                margin: 0;
+                padding: 0;
+              }
+              .email-container { 
+                max-width: 600px; 
+                margin: 20px auto; 
+                background: #ffffff; 
+                border-radius: 12px; 
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+                overflow: hidden;
+              }
+              .header { 
+                background: linear-gradient(135deg, #FF6347 0%, #667eea 100%); 
+                color: white; 
+                padding: 30px 20px; 
+                text-align: center; 
+              }
+              .header h1 { 
+                margin: 0; 
+                font-size: 28px; 
+                font-weight: bold;
+              }
+              .icon { 
+                font-size: 48px; 
+                margin-bottom: 10px; 
+              }
+              .content { 
+                padding: 40px 30px; 
+              }
+              .success-box { 
+                background: #d4edda; 
+                border-left: 4px solid #28a745; 
+                padding: 15px; 
+                border-radius: 8px; 
+                margin: 20px 0; 
+              }
+              .success-box p { 
+                margin: 0; 
+                color: #155724; 
+                font-weight: 600; 
+              }
+              .warning-box { 
+                background: #fff3cd; 
+                border-left: 4px solid #ffc107; 
+                padding: 15px; 
+                border-radius: 8px; 
+                margin: 20px 0; 
+              }
+              .warning-box p { 
+                margin: 0; 
+                color: #856404; 
+                font-weight: 600; 
+              }
+              .info-box { 
+                background: #f8f9fa; 
+                padding: 20px; 
+                border-radius: 8px; 
+                margin: 20px 0; 
+              }
+              .info-box h3 { 
+                margin-top: 0; 
+                color: #FF6347; 
+              }
+              .info-item { 
+                display: flex; 
+                align-items: flex-start; 
+                margin: 10px 0; 
+              }
+              .info-item::before { 
+                content: "✓"; 
+                color: #28a745; 
+                font-weight: bold; 
+                margin-right: 10px; 
+                font-size: 18px; 
+              }
+              .login-button { 
+                display: inline-block; 
+                padding: 15px 40px; 
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                color: white !important; 
+                text-decoration: none; 
+                border-radius: 50px; 
+                font-weight: bold; 
+                margin: 20px 0;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+              }
+              .login-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+              }
+              .footer { 
+                background: #2c3e50; 
+                padding: 20px; 
+                text-align: center; 
+                font-size: 12px; 
+                color: white; 
+              }
+              .timestamp { 
+                color: #6c757d; 
+                font-size: 14px; 
+                margin: 10px 0; 
+                padding: 10px;
+                background: #f8f9fa;
+                border-radius: 5px;
+                text-align: center;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="email-container">
+              <div class="header">
+                <div class="icon">✅</div>
+                <h1>Password Reset Successful</h1>
+              </div>
+              <div class="content">
+                <p style="font-size: 16px;">Hello <strong>${user.name}</strong>,</p>
+                <div class="success-box">
+                  <p>✓ Your password has been successfully reset!</p>
+                </div>
+                <p style="margin: 20px 0;">This confirms that your password was changed on:</p>
+                <p class="timestamp"><strong>📅 ${new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'long' })}</strong></p>
+                <div class="warning-box">
+                  <p>⚠️ If you did NOT make this change, please contact our support team immediately at <a href="mailto:aihub-vvit@vvit.net" style="color: #856404; font-weight: bold;">aihub-vvit@vvit.net</a></p>
+                </div>
+                <div class="info-box">
+                  <h3>🔐 Security Best Practices:</h3>
+                  <div class="info-item">Never share your password with anyone</div>
+                  <div class="info-item">Use a strong, unique password for your account</div>
+                  <div class="info-item">Change your password regularly (every 3-6 months)</div>
+                  <div class="info-item">Enable two-factor authentication when available</div>
+                  <div class="info-item">Be cautious of phishing emails asking for credentials</div>
+                  <div class="info-item">Use a password manager to store complex passwords</div>
+                </div>
+                <p style="text-align: center; margin-top: 30px;">
+                  <a href="http://localhost:5173/login" class="login-button">🔑 Login to Your Account</a>
+                </p>
+                <p style="margin-top: 30px; color: #666; font-size: 14px; text-align: center;">
+                  <strong>Need Help?</strong><br>
+                  📧 Email: <a href="mailto:aihub-vvit@vvit.net" style="color: #667eea;">aihub-vvit@vvit.net</a><br>
+                  🌐 Website: <a href="https://aihub-vvitu.social/" target="_blank" style="color: #667eea;">aihub-vvitu.social</a>
+                </p>
+              </div>
+              <div class="footer">
+                <p><strong>AIHUB-VVIT</strong></p>
+                <p>Vasireddy Venkatadri Institute of Technology (VVIT)</p>
+                <p style="margin-top: 10px; opacity: 0.8;">&copy; ${new Date().getFullYear()} AIHUB-VVIT. All rights reserved.</p>
+              </div>
+            </div>
+          </body>
+          </html>
+        `
+      });
+      console.log(`📧 Password reset confirmation email sent to: ${user.email}`);
+    } catch (emailError) {
+      console.error('❌ Failed to send confirmation email:', emailError);
+      // Don't fail the password reset if email fails
+    }
+
+    res.json({ 
+      message: 'Password has been reset successfully',
+      emailSent: true
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Invalid or expired token' });
