@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
+import AIHubHeader from './components/AIHubHeader';
+import AIHubFooter from './components/AIHubFooter';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -16,6 +18,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+        <AIHubHeader />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -27,6 +30,7 @@ function App() {
           <Route path="/verification-error" element={<VerificationError />} />
           <Route path="/verification-pending" element={<VerificationPending />} />
         </Routes>
+        <AIHubFooter />
       </Router>
     </AuthProvider>
   );

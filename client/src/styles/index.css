@@ -56,6 +56,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   margin: 0;
+  /* Add padding for fixed header and footer */
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 code {
